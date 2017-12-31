@@ -1,0 +1,33 @@
+{
+  "name": "chimee-plugin-snapshot",
+  "version": "0.1.0",
+  "description": "snapshot plugin for Chimee Player",
+  "main": "src/index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "rollup --config scripts/rollup.build.js --watch",
+    "demo": "rollup --config scripts/rollup.demo.js",
+    "build": "rollup --config scripts/rollup.build.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/zcoding/chimee-plugin-snapshot.git"
+  },
+  "keywords": [
+    "chimee",
+    "snapshot"
+  ],
+  "author": "wu.zijie.software@gmail.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/zcoding/chimee-plugin-snapshot/issues"
+  },
+  "homepage": "https://github.com/zcoding/chimee-plugin-snapshot#readme",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-plugin-external-helpers": "^6.22.0",
+    "babel-preset-env": "^1.6.1",
+    "rollup": "^0.53.2",
+    "rollup-plugin-babel": "^3.0.3"
+  }
+}
