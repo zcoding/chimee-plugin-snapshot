@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "rollup --config scripts/rollup.build.js --watch",
-    "demo": "rollup --config scripts/rollup.demo.js",
+    "demo": "rollup --config scripts/rollup.demo.js --watch",
     "build": "rollup --config scripts/rollup.build.js"
   },
   "repository": {

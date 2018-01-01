@@ -1,5 +1,7 @@
 ChimeePlayer.install(ChimeeSnapshot)
 
+const snapshotContainer = document.querySelector('.snapshot-container')
+
 var player = new ChimeePlayer({
   wrapper: '.chimee-container',
   src: './1.mp4',
@@ -7,22 +9,34 @@ var player = new ChimeePlayer({
   box:'native',
   autoplay: false,
   controls: true,
+  autoplay: true,
+  width: 640,
+  height: 360,
   plugin: [{
     name: ChimeeSnapshot.name,
+    watermark: {
+      text: 'chimee-plugin-snapshot example',
+      x: 200,
+      y: -20,
+      // rotate: 30,
+      fontColor: '#ECECEC',
+      fontSize: 22
+    },
     snapshotted(snapshot) {
       const image = new Image()
       image.src = snapshot.src
-      image.style.position = 'absolute'
-      image.style.width = '300px'
-      image.style.top = '0'
-      image.style.right = '0'
-      image.style.zIndex = 1000
-      document.body.appendChild(image)
+      snapshotContainer.appendChild(image)
       console.log(snapshot)
     }
   }]
 })
 
-setTimeout(() => {
+let count = 0
+const timer = setInterval(() => {
+  if (count >= 10) {
+    clearTimeout(timer)
+    return false
+  }
   player.$plugins.snapshot.takeSnapshot(640, 360)
-}, 3000)
+  count++
+}, 1000)

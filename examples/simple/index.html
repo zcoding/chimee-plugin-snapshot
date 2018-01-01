@@ -3,12 +3,31 @@
 <head>
   <meta charset="UTF-8">
   <title>Simple Demo</title>
+  <style>
+body {
+  margin: 0;
+}
+.chimee-container {
+  margin: 0 auto;
+  width: 640px;
+  height: 360px;
+}
+.snapshot-container {
+  margin-top: 10px;
+  font-size: 0;
+}
+.snapshot-container img {
+  display: inline-block;
+  width: 320px;
+}
+  </style>
 </head>
 <body>
   <div class="chimee-container">
     <video></video>
   </div>
-  <script src="http://lib.baomitu.com/chimee-player/1.1.9/chimee-player.browser.js"></script>
+  <div class="snapshot-container"></div>
+  <script src="./chimee-player.browser.js"></script>
   <script src="./chimee-plugin-snapshot.js"></script>
   <script src="./simple.js"></script>
 </body>

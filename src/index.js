@@ -13,7 +13,6 @@ const Snapshot = {
       cvs.width = snapshotWidth
       cvs.height = snapshotHeight
       const ctx = cvs.getContext('2d')
-      this.$video.crossOrigin = "Anonymous"
       ctx.drawImage(this.$video, 0, 0, snapshotWidth, snapshotHeight)
       if (this.$config.watermark) {
         const watermarkConfig = this.$config.watermark
@@ -21,11 +20,11 @@ const Snapshot = {
         if (watermarkConfig.text) {
           ctx.save()
           const rotate = watermarkConfig.rotate || 0
-          ctx.rotate((rotate / 180) * Math.PI)
+          ctx.rotate(rotate * Math.PI / 180)
           let wmX = watermarkConfig.x || -10
-          wmX = wmX < 0 ? snapshotWidth + wmX : wmX
+          wmX = wmX < 0 ? (snapshotWidth + wmX) : wmX
           let wmY = watermarkConfig.y || -10
-          wmY = wmY < 0 ? snapshotWidth + wmY : wmY
+          wmY = wmY < 0 ? (snapshotHeight + wmY) : wmY
           const wmFZ = watermarkConfig.fontSize || 24
           const wmFF = watermarkConfig.fontFamily || 'sans-serif'
           ctx.fillStyle = watermarkConfig.fontColor || '#333'
