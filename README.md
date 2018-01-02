@@ -3,11 +3,13 @@ Snapshot plugin for Chimee Player
 
 简单好用的 Chimee 播放器截图插件
 
+[https://github.com/zcoding/chimee-plugin-snapshot](https://github.com/zcoding/chimee-plugin-snapshot)
+
 ## Install
 
 ```bash
-# 依赖于 chimee， 首先需要安装 chimee
-npm i chimee
+# 依赖于 chimee 或 chimee-player， 首先需要安装 chimee 或 chimee-player
+npm i chimee # npm i chimee-player
 # 安装截图插件
 npm i chimee-plugin-snapshot
 ```
@@ -67,6 +69,12 @@ player.$plugins.snapshot.takeSnapshot()
 + `src` 截图的 URL ，其实就是通过 `URL.createObjectURL(blob)` 生成的，方便开发者实现展示图片等逻辑
 + `width` 截图的宽（px）
 + `height` 截图的高（px）
+
+## API
+
+```javascript
+player.$plugins.snapshot.takeSnapshot(width, height, quality)
+```
 
 ## examples
 
