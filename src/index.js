@@ -33,7 +33,7 @@ const Snapshot = {
         }
       }, 'image/jpeg', quality)
     },
-    takeSnapshot(snapshotWidth = this.width, snapshotHeight = this.height, quality = 0.8) {
+    takeSnapshot(snapshotWidth = 640, snapshotHeight = 360, quality = 0.8) {
       const cvs = this.$canvas
       cvs.width = snapshotWidth
       cvs.height = snapshotHeight

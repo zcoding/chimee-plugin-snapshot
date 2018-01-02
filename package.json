@@ -2,12 +2,12 @@
   "name": "chimee-plugin-snapshot",
   "version": "0.1.0",
   "description": "snapshot plugin for Chimee Player",
-  "main": "src/index.js",
+  "main": "dist/chimee-plugin-snapshot.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "rollup --config scripts/rollup.build.js --watch",
-    "demo": "rollup --config scripts/rollup.demo.js --watch",
-    "build": "rollup --config scripts/rollup.build.js"
+    "build": "rollup --config scripts/rollup.build.js",
+    "demo": "rollup --config scripts/rollup.demo.js --watch"
   },
   "repository": {
     "type": "git",

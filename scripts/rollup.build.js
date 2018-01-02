@@ -5,9 +5,13 @@ export default {
   input: 'src/index.js',
   output: [
     {
-      file: 'dist/chimee-plugin-snapshot.js',
+      file: 'dist/chimee-plugin-snapshot-iife.js',
       format: 'iife',
       name: 'ChimeeSnapshot'
+    },
+    {
+      file: 'dist/chimee-plugin-snapshot.js',
+      format: 'es'
     }
   ],
   plugins: [

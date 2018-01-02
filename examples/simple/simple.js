@@ -33,7 +33,7 @@ var player = new ChimeePlayer({
       const image = new Image()
       image.src = snapshot.src
       snapshotContainer.appendChild(image)
-      // console.log(snapshot)
+      console.log(snapshot)
     }
   }]
 })
@@ -44,6 +44,6 @@ const timer = setInterval(() => {
     clearTimeout(timer)
     return false
   }
-  player.$plugins.snapshot.takeSnapshot(640, 360)
+  player.$plugins.snapshot.takeSnapshot()
   count++
 }, 1000)
