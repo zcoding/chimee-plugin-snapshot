@@ -34,6 +34,9 @@ const player = new ChimeePlayer({
     }
   }]
 })
+
+// ...
+player.$plugins.snapshot.takeSnapshot()
 ```
 
 ## Config
