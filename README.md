@@ -49,8 +49,8 @@ const player = new Chimee({
 + `rotate` 旋转角度（正为顺时针，反之逆时针），默认 `0` 即不旋转
 + `fontSize` 字体大小，默认值 `24`，**只对 `text` 水印有效**
 + `fontFamily` 字体名称，默认值 `"sans-serif"`，**只对 `text` 水印有效**
-+ `fontColor` 字体颜色，支持 RGB、RGBA、HLS、十六进制数值等格式，默认值 `"#333"`，**只对 `text` 水印有效**
-+ `opacity` 透明度，0 为全透明，1 为不透明，默认 `0.5`
++ `fontColor` 字体颜色，支持 RGB、RGBA、HLS、十六进制数值等格式，默认值 `"#rgba(0, 0, 0, 0.5)"`，**只对 `text` 水印有效**
++ `opacity` 透明度，0 为全透明，1 为不透明，默认 `0.5`，**只对 `image` 水印有效**
 
 ### `onSnapshotted(snapshot)`
 

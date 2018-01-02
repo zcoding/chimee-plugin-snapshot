@@ -14,19 +14,25 @@ var player = new ChimeePlayer({
   height: 360,
   plugin: [{
     name: ChimeeSnapshot.name,
+    // watermark: {
+    //   text: 'chimee-plugin-snapshot',
+    //   x: -300,
+    //   y: -40,
+    //   // rotate: 30,
+    //   fontColor: 'rgba(255, 255, 255, 0.5)',
+    //   fontSize: 22
+    // },
     watermark: {
-      text: 'chimee-plugin-snapshot example',
-      x: 200,
-      y: -20,
-      // rotate: 30,
-      fontColor: '#ECECEC',
-      fontSize: 22
+      image: './chimee-logo.png',
+      x: -140,
+      y: -40,
+      opacity: 0.8
     },
     snapshotted(snapshot) {
       const image = new Image()
       image.src = snapshot.src
       snapshotContainer.appendChild(image)
-      console.log(snapshot)
+      // console.log(snapshot)
     }
   }]
 })
