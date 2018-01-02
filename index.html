@@ -3,7 +3,46 @@
 <head>
   <meta charset="UTF-8">
   <title>chimee-plugin-snapshot</title>
+  <style>
+body {
+  margin: 0;
+}
+h2 {
+  font-size: 16px;
+  color: #333;
+}
+h2 a {
+  text-decoration: none;
+  color: #333;
+}
+h2 a:hover {
+  color: #de698c;
+}
+.chimee-container {
+  margin: 0 auto;
+  width: 640px;
+  height: 360px;
+}
+.snapshot-container {
+  margin-top: 10px;
+  font-size: 0;
+}
+.snapshot-container img {
+  display: inline-block;
+  width: 320px;
+}
+  </style>
 </head>
 <body>
+  <div class="layout-main">
+    <h2>Github: <a target="_blank" href="https://github.com/zcoding/chimee-plugin-snapshot">zcoding/chimee-plugin-snapshot</a></h2>
+    <div class="chimee-container">
+      <video></video>
+    </div>
+    <div class="snapshot-container"></div>
+  </div>
+  <script src="./examples/simple/chimee-player.browser.js"></script>
+  <script src="./dist/chimee-plugin-snapshot-iife.js"></script>
+  <script src="./app.js"></script>
 </body>
 </html>
