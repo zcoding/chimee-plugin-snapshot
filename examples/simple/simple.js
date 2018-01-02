@@ -17,16 +17,17 @@ var player = new ChimeePlayer({
     // watermark: {
     //   text: 'chimee-plugin-snapshot',
     //   x: -300,
-    //   y: -40,
-    //   // rotate: 30,
+    //   y: -100,
+    //   rotate: 15,
     //   fontColor: 'rgba(255, 255, 255, 0.5)',
     //   fontSize: 22
     // },
     watermark: {
       image: './chimee-logo.png',
       x: -140,
-      y: -40,
-      opacity: 0.8
+      y: -70,
+      opacity: 0.8,
+      rotate: 10
     },
     snapshotted(snapshot) {
       const image = new Image()

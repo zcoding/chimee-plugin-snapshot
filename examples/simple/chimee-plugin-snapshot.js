@@ -58,22 +58,22 @@ var Snapshot = {
         wmX = wmX < 0 ? snapshotWidth + wmX : wmX;
         var wmY = watermarkConfig.y || -10;
         wmY = wmY < 0 ? snapshotHeight + wmY : wmY;
+        ctx.save();
+        var rotate = watermarkConfig.rotate || 0;
+        ctx.translate(wmX, wmY);
+        ctx.rotate(rotate * Math.PI / 180);
         if (watermarkConfig.text) {
-          ctx.save();
-          var rotate = watermarkConfig.rotate || 0;
-          ctx.rotate(rotate * Math.PI / 180);
           var wmFZ = watermarkConfig.fontSize || 24;
           var wmFF = watermarkConfig.fontFamily || 'sans-serif';
           ctx.fillStyle = watermarkConfig.fontColor || 'rgba(0, 0, 0, 0.5)';
           ctx.font = wmFZ + 'px ' + wmFF;
-          ctx.fillText(watermarkConfig.text, wmX, wmY);
+          ctx.fillText(watermarkConfig.text, 0, 0);
           ctx.restore();
           this.createBlob(quality);
         } else if (watermarkConfig.image) {
-          ctx.save();
           ctx.globalAlpha = watermarkConfig.opacity || 0.5;
           this._onImageReady.then(function (image) {
-            ctx.drawImage(image, wmX, wmY, image.width, image.height);
+            ctx.drawImage(image, 0, 0, image.width, image.height);
             ctx.restore();
             _this2.createBlob(quality);
           }).catch(function (error) {
@@ -82,7 +82,8 @@ var Snapshot = {
             _this2.createBlob(quality);
           });
         } else {
-          Warn('添加截图水印至少要配置 text 或 image 参数');
+          ctx.restore();
+          Warn('添加水印至少要配置 text 或 image 参数');
         }
       } else {
         this.createBlob(quality);
