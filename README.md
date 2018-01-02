@@ -14,11 +14,11 @@ npm i chimee-plugin-snapshot
 
 ```javascript
 import ChimeePluginSnapshot from 'chimee-plugin-snapshot'
-import Chimee from 'chimee'
+import ChimeePlayer from 'chimee-player'
 
-Chimee.install(ChimeePluginSnapshot)
+ChimeePlayer.install(ChimeePluginSnapshot)
 
-const player = new Chimee({
+const player = new ChimeePlayer({
   plugin: [{
     name: ChimeePluginSnapshot.name,
     watermark: {
@@ -67,5 +67,5 @@ const player = new Chimee({
 
 ## examples
 
-+ [看线上 Demo]()
-+ [看代码]()
++ [看线上 Demo](https://zcoding.github.io/chimee-plugin-snapshot/)
++ [看代码](examples/simple)
